@@ -26,6 +26,11 @@ Figure out what you need to change to give Javascript access to the `h1#header` 
 
 **YOUR NOTES**
 ```
+1. ALWAYS set an event listener for when the DOM Content has loaded on the docuemnt:
+document.addEventListener('DOMContentLoaded', event => { //code here// })
+
+2. Access elements by grabbing them from the document. 
+3. Access the text inside the element with element.innerHTML
 
 ```
 
@@ -35,7 +40,9 @@ Now that you have access to the `h1#header` element, use Javascript to change th
 
 **YOUR NOTES**
 ```
-
+1. Use console.dir() to help find what specific property needs to be updated
+2. Set that property using dot notation to the appropriate value:
+header.style.color = "red"
 ```
 
 ## Deliverable 3
@@ -57,7 +64,24 @@ Create a DOM element that looks like this for each player and append it to the `
 
 **YOUR NOTES**
 ```
-
+1. I reset the global variable to a local variable just for personal preference.
+2. Create a function that takes in an argument of players to render an array of player objects
+  a. Set a variable that points to an element in the DOM to contain the players info
+  b. Create another function that takes in an argument of player to render a single player
+    i. Create a div element to store player information
+    ii. Set div properties accordingly to the instructions:
+        div.class = "player"
+        div.dataset.number = "player's number"
+    iii. Set the div's innerHTML accordingly to the instructions:
+        <h3>
+        ${player.name} (<em>${player.nickname}</em>)
+        </h3>
+        <img src="${player.photo}" alt="${player.name}">
+    iv. Returning the div object from this function
+  c. Set a variable to the rendered player to then appened to the variable that will contain this information, rendering it to the DOM accordingly - see point 2a:
+    let rendered = renderPlayer(player)
+    container.appendChild(rendered)
+    
 ```
 
 ## Deliverable 4
@@ -68,5 +92,7 @@ Hint: You can use `querySelector` with [CSS Attribute Selectors](https://develop
 
 **YOUR NOTES**
 ```
+1. Find a way to grab that element and set it to a variable.
+2. Remove with variable.remove()
 
 ```
